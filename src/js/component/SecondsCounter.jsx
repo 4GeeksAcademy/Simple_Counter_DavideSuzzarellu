@@ -78,7 +78,7 @@ export const SecondCounter = ({ second, minute, hour, isRun }) => {
       draggable: true,
       progress: undefined,
       theme: "colored",
-      });
+    });
   }
 
 
@@ -86,14 +86,14 @@ export const SecondCounter = ({ second, minute, hour, isRun }) => {
     <main className="container-fluid">
 
       <section className="p-3 card-container bg-black d-flex flex-column justify-content-center align-items-center;">
-          <div className="row justify-content-center gap-1">
-            <RenderCards value={<i className="fa-regular fa-clock display-4"></i>} />            
-            <RenderCards value={hours} />       
-            <RenderCards value="." />
-            <RenderCards value={minutes} />
-            <RenderCards value="." />
-            <RenderCards value={seconds} />
-          </div>
+        <div className="row justify-content-center gap-1">
+          <RenderCards value={<i className="fa-regular fa-clock display-4"></i>} />
+          <RenderCards value={hours} />
+          <RenderCards value="." />
+          <RenderCards value={minutes} />
+          <RenderCards value="." />
+          <RenderCards value={seconds} />
+        </div>
 
         <aside className="row d-flex flex-column justify-content-center col-lg-3 col-md-5 col-6  mx-auto mt-2">
           <button className="bg-success mb-2" onClick={restartCount}>Reiniciar Contador</button>
@@ -104,12 +104,13 @@ export const SecondCounter = ({ second, minute, hour, isRun }) => {
 
       <aside className="row d-flex justify-content-center align-items-center pt-3">
         <form className="col-auto d-flex flex-column justify-content-center align-items-center border border-black p-2 rounded" onSubmit={handleCountdownSubmit}>
-          
+
           <h3 className="mb-3">Configuración de Countdown</h3>
 
           <div className="mb-3 d-flex justify-content-between align-items-center w-75">
-            <label className="form-label w-25 me-2">Horas:</label>
+            <label htmlFor="hour" className="form-label w-25 me-2">Horas:</label>
             <input
+              id="hour"
               type="number"
               className="form-control w-75"
               value={countdown.hours}
@@ -118,8 +119,9 @@ export const SecondCounter = ({ second, minute, hour, isRun }) => {
           </div>
 
           <div className="mb-3 d-flex justify-content-between align-items-center w-75">
-            <label className="form-label w-25 me-2">Minutos:</label>
+            <label htmlFor="minutes" className="form-label w-25 me-2">Minutos:</label>
             <input
+              id="minutes"
               type="number"
               className="form-control w-75"
               value={countdown.minutes}
@@ -128,8 +130,9 @@ export const SecondCounter = ({ second, minute, hour, isRun }) => {
           </div>
 
           <div className="mb-3 d-flex justify-content-between align-items-center w-75">
-            <label className="form-label w-25 me-2">Segundos:</label>
+            <label htmlFor="seconds" className="form-label w-25 me-2">Segundos:</label>
             <input
+              id="seconds"
               type="number"
               className="form-control w-75"
               value={countdown.seconds}
